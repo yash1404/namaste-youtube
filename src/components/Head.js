@@ -2,18 +2,30 @@ import React from "react";
 import hambureger from "../assest/Images/menu.png";
 import search from "../assest/Images/search-interface-symbol.png";
 import user from "../assest/Images/profile-user.png";
+import {useDispatch} from "react-redux"
+import Appslice from "../utils/AppSlice"
 
 const Head = () => {
+  const dispatch=useDispatch()
+
+  const isToggleHandle=()=>{
+    dispatch({
+      type:Appslice.actions.isToggle.type
+    })
+  }
   return (
     <React.Fragment>
    <div className="flex justify-between items-center px-4 shadow-lg">
       {/* first section */}
       <div className="flex justify-start items-center">
-        <img src={hambureger} alt="hamburger img" className="w-8 cursor-pointer" />
+        <img src={hambureger} alt="hamburger img" className="w-8 cursor-pointer"
+        onClick={isToggleHandle}
+        />
         <img
           src="https://lh3.googleusercontent.com/3zkP2SYe7yYoKKe47bsNe44yTgb4Ukh__rBbwXwgkjNRe4PykGG409ozBxzxkrubV7zHKjfxq6y9ShogWtMBMPyB3jiNps91LoNH8A=s500"
           alt="youtube logo"
           className="w-32"
+
         />
       </div>
 

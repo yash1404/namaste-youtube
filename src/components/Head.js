@@ -90,7 +90,7 @@ const Head = () => {
               {searchData.map((searchDataElem, ind) => {
                 return (
                   <div>
-                    <p className=" hover:bg-gray-100 p-[2px] rounded-sm mt-2 font-bold cursor-pointer">
+                    <p key={ind} className=" hover:bg-gray-100 p-[2px] rounded-sm mt-2 font-bold cursor-pointer">
                       {searchDataElem}
                     </p>
                   </div>

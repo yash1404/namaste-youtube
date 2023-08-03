@@ -7,7 +7,7 @@ const Sidebar = () => {
   return (
     <React.Fragment>
       {isMenuOpen ? (
-        <div className=" w-48 shadow-lg h-full ">
+        <div className="col-span-2">
           <ul className="mt-5 text-center">
             <li className="mt-2 font-bold "> Home</li>
             <li className="mt-2 font-bold"> Shorts</li>

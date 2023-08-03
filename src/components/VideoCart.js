@@ -1,5 +1,6 @@
 import React from "react";
 import { kFormatter } from "../utils/Kformatter";
+import { Link } from "react-router-dom";
 
 const VideoCart = (props) => {
   const { videoInfo } = props;
@@ -11,12 +12,14 @@ const VideoCart = (props) => {
           const { title, channelTitle } = curr.snippet;
           const { viewCount } = curr.statistics;
           return (
-            <div key={curr.id} className="w-64 mt-5 ml-2 shadow-lg p-4 cursor-pointer">
-              <img src={url} alt="thumbnails" className="rounded-lg"/>
-              <p className="font-bold">{title}</p>
-              <p className="font-semibold">{channelTitle}</p>
-              <span>{kFormatter(viewCount)} Views</span>
-            </div>
+            <Link to={`/watch?v=${curr.id}`}>
+            <div key={curr.id} className="w-64 mt-5 ml-2 shadow-lg p-4 h-full cursor-pointer">
+            <img src={url} alt="thumbnails" className="rounded-lg"/>
+            <p className="font-bold">{title}</p>
+            <p className="font-semibold">{channelTitle}</p>
+            <span>{kFormatter(viewCount)} Views</span>
+          </div>
+          </Link>
           );
         })}
       </div>

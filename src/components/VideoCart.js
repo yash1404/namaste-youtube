@@ -12,8 +12,8 @@ const VideoCart = (props) => {
           const { title, channelTitle } = curr.snippet;
           const { viewCount } = curr.statistics;
           return (
-            <Link to={`/watch?v=${curr.id}`}>
-            <div key={curr.id} className="w-64 mt-5 ml-2 shadow-lg p-4 h-full cursor-pointer">
+            <Link key={curr.id} to={`/watch?v=${curr.id}`}>
+            <div className="w-64 mt-5 ml-2 shadow-lg p-4 h-full cursor-pointer">
             <img src={url} alt="thumbnails" className="rounded-lg"/>
             <p className="font-bold">{title}</p>
             <p className="font-semibold">{channelTitle}</p>

@@ -4,7 +4,6 @@ const Comment = ({ commentData }) => {
   return (
     <React.Fragment>
       {commentData.map((commentdatas, ind) => {
-        console.log("commentdata", commentdatas);
         const { name, text } = commentdatas;
         return (
           <div
